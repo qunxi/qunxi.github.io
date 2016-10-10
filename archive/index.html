@@ -1,0 +1,22 @@
+---
+layout: master
+---
+
+<div class="archive">
+    <div class="posts">
+        <ul>
+        {% for post in site.posts limit : 18%}
+            <li><span>{{post.date | date: "%Y-%m-%d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+   
+    <div class="categories">
+        <!--{% for category in site.categories %}
+            {{category | first}} ({{ category | last | size }})
+        {% endfor %}-->
+        {% for tag in site.tags %}
+            <div class="category">{{tag | first }}<span>({{tag | last | size}})</span></div>
+        {% endfor %}
+    </div>
+</div>

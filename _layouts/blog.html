@@ -1,0 +1,20 @@
+---
+layout: master
+---
+
+<div class="blog">
+{% for post in site.posts limit: 8 %}
+    <div class="post">
+        <a class="title" href="{{post.url}}">{{ post.title }}</a>
+        <div class="date">
+            {{ post.date | date: "%Y年%m月%d日" }}
+        </div>
+        <div class="description">
+            {{ post.content | split: '<!--more-->' | first }}
+        </div>
+        <a href="{{post.url}}">More »</a>
+    </div>
+{% endfor %}
+</div>
+
+
