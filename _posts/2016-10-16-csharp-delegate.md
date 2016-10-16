@@ -20,7 +20,7 @@ tags:
 一个好的函数应该只封装本身所关注行为，比如一个快速排序算法，它的职责是实现快速排序本身的逻辑，至于排序时的比较条件(比如数组中的对象以什么规则比较大小)应该是有外部客户决定。下面的Predicate操作就是一个回调函数
 
 ```C#
-	void sort (RandomAccessIterator first, RandomAccessIterator last, Predicate comp);
+void sort (RandomAccessIterator first, RandomAccessIterator last, Predicate comp);
 ```
 
 >## 步调用(Asynchronization)
@@ -28,17 +28,17 @@ tags:
 很多时候为了减少因大量的IO操作带来不好的用户体验，我们往往会使用异步处理。其中AJAX的出现给互联网带来全新的体验，所有的网络请求发送以后，我们不需要一直在等待服务端的响应，而是指定一个回调函数告诉XMLHttpRequest如何处理服务器返回的结果，剩下我们就可以继续处理其它任务。下面的代码不仅展示了AJAX如何异步调用，而且也印证了关注点分离，任何与XMLHttpRequest无关渲染工作都开放给用户来指定。
 
 ```javascript
-	xmlHttpRequest.onreadystatechange = function()
+xmlHttpRequest.onreadystatechange = function()
+{
+	if (xmlHttpRequest.readyState == 4 
+		&& xmlHttpRequest.status == 200)
 	{
-		if (xmlHttpRequest.readyState == 4 
-			&& xmlHttpRequest.status == 200)
-		{
-			document.getElementById("elementId")
-				.innerHTML = xmlHttpRequest.responseText;
-		}
+		document.getElementById("elementId")
+			.innerHTML = xmlHttpRequest.responseText;
 	}
-	xmlHttpRequest.open("GET", url, true);
-	xmlHttpRequest.send();
+}
+xmlHttpRequest.open("GET", url, true);
+xmlHttpRequest.send();
 ```
 
 > ## 观察者模式(Observer Pattern)
