@@ -5,17 +5,15 @@
 {% include head.html %}
 
 <body>
-    {% include header.html %}
+    {% if page.title != 404 %}
+        {% include header.html %}
+    {% endif %}
     <div class="wrapper">
-                
-        <div class="main-wrapper">
-           
-           {{content}}
-            
+        <div class="main-wrapper">            
+                {{content}}
         </div><!--//main-body-->
     </div>
- 
-{% include footer.html %}
+    {% include footer.html %}
  
 {% include scripts.html %}
 </body>

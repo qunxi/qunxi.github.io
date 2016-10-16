@@ -85,8 +85,7 @@ p {
 
 .blog .title{
   color: #007fff;
-  text-transform: uppercase;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
 }
 
@@ -108,7 +107,6 @@ p {
 .page .section-title{
   text-align: center;
   color: #007fff;
-  text-transform: uppercase;
   font-size: 31px;
   font-weight: 700;
   position: relative;
@@ -118,7 +116,6 @@ p {
 
 .page h1{
   color: #FF4500;
-  text-transform: uppercase;
   font-size: 26px;
 }
 
@@ -131,7 +128,6 @@ p {
 
 .page h3{
   color: #228B22;
-  text-transform: uppercase;
   font-size: 12px;
 }
 
