@@ -2,3 +2,154 @@
 title: 程序猿
 url: 'http://www.wangqunxi.com'
 baseurl: '' #change it according to your repository name
+
+C#:
+  type: programming
+  ace_mode: csharp
+  codemirror_mode: clike
+  codemirror_mime_type: text/x-csharp
+  tm_scope: source.cs
+  search_term: csharp
+  color: "#178600"
+  aliases:
+  - csharp
+  extensions:
+  - ".cs"
+  - ".cake"
+  - ".cshtml"
+  - ".csx"
+  language_id: 42
+C++:
+  type: programming
+  ace_mode: c_cpp
+  codemirror_mode: clike
+  codemirror_mime_type: text/x-c++src
+  search_term: cpp
+  color: "#f34b7d"
+  aliases:
+  - cpp
+  extensions:
+  - ".cpp"
+  - ".c++"
+  - ".cc"
+  - ".cp"
+  - ".cxx"
+  - ".h"
+  - ".h++"
+  - ".hh"
+  - ".hpp"
+  - ".hxx"
+  - ".inc"
+  - ".inl"
+  - ".ipp"
+  - ".tcc"
+  - ".tpp"
+  language_id: 43
+Python:
+  type: programming
+  ace_mode: python
+  codemirror_mode: python
+  codemirror_mime_type: text/x-python
+  color: "#3572A5"
+  extensions:
+  - ".py"
+  - ".bzl"
+  - ".cgi"
+  - ".fcgi"
+  - ".gyp"
+  - ".lmi"
+  - ".pyde"
+  - ".pyp"
+  - ".pyt"
+  - ".pyw"
+  - ".rpy"
+  - ".spec"
+  - ".tac"
+  - ".wsgi"
+  - ".xpy"
+  filenames:
+  - BUCK
+  - BUILD
+  - SConscript
+  - SConstruct
+  - Snakefile
+  - wscript
+  interpreters:
+  - python
+  - python2
+  - python3
+  aliases:
+  - rusthon
+  language_id: 303
+Python traceback:
+  type: data
+  group: Python
+  searchable: false
+  extensions:
+  - ".pytb"
+  tm_scope: text.python.traceback
+  ace_mode: text
+  language_id: 304
+TypeScript:
+  type: programming
+  color: "#2b7489"
+  aliases:
+  - ts
+  extensions:
+  - ".ts"
+  - ".tsx"
+  tm_scope: source.ts
+  ace_mode: typescript
+  codemirror_mode: javascript
+  codemirror_mime_type: application/typescript
+  language_id: 378
+JavaScript:
+  type: programming
+  tm_scope: source.js
+  ace_mode: javascript
+  codemirror_mode: javascript
+  codemirror_mime_type: text/javascript
+  color: "#f1e05a"
+  aliases:
+  - js
+  - node
+  extensions:
+  - ".js"
+  - "._js"
+  - ".bones"
+  - ".es"
+  - ".es6"
+  - ".frag"
+  - ".gs"
+  - ".jake"
+  - ".jsb"
+  - ".jscad"
+  - ".jsfl"
+  - ".jsm"
+  - ".jss"
+  - ".njs"
+  - ".pac"
+  - ".sjs"
+  - ".ssjs"
+  - ".xsjs"
+  - ".xsjslib"
+  filenames:
+  - Jakefile
+  interpreters:
+  - node
+  language_id: 183
+F#:
+  type: programming
+  color: "#b845fc"
+  search_term: fsharp
+  aliases:
+  - fsharp
+  extensions:
+  - ".fs"
+  - ".fsi"
+  - ".fsx"
+  tm_scope: source.fsharp
+  ace_mode: text
+  codemirror_mode: mllike
+  codemirror_mime_type: text/x-fsharp
+  language_id: 105
