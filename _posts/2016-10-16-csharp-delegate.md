@@ -173,7 +173,7 @@ Sum = (a, b) =>{ return sum + a + b;}
 当然不是任何函数我们都得用匿名函数和lambda表达式让代码显得简洁紧凑，这样反而会让代码不易调试，而且C#是面向对象语言，我们需要符合面向对象设计原则，保持代码的一致性，从而增加可维护性，所有新技术的的应用不是为了盲目追赶潮流，而是如何让代码更加清晰和可维护，且不可本末倒置。
 
 # 4.事件(event)特殊的委托
-很多场景我们需要在一个对象发生变化时，通知另外一些相关对象，并让这些对象根据变化做出相应的反应。这就是典型的观察者(Observer)模式或叫订阅/发布(subscribe/publish)模式。尤其在Windows平台很多设计都是基于事件消息机制，所以C#便提供了一个关键字event，让事件这个概念在C#中变得更加普遍。下面就让我们看下事件是如何定义和使用的
+很多场景我们需要在一个对象发生变化时，通知另外一些相关对象，并让这些对象根据变化做出相应的反应。这就是典型的观察者(Observer)模式或叫订阅/发布(subscribe/publish)模式。尤其在Windows平台很多设计都是基于事件消息机制，所以C#便提供了一个关键字event，使得C#与生俱来就支持观察者模式。下面就让我们看下事件是如何定义和使用的
 
 ```C#
 class Subject{
@@ -206,7 +206,8 @@ class Observer2{
 class Program{
       public static void Main(){
             Subject sub = new Subject();
-            Observer ob = new Observer(sub);
+            Observer1 obj1 = new Observer1(sub);
+            Observer2 obj2 = new Observer2(sub);
             sub.NotifyMessage();
       }
 }
@@ -215,12 +216,13 @@ class Program{
 
 ```C#
 Subject sub = new Subject();
-Observer ob = new Observer(sub);
+Observer1 obj1 = new Observer1(sub);
+Observer2 obj2 = new Observer2(sub);
 sub.TestEvent(sub, null);
 ```
-上面第三行代码编译时会发生错误。之所以错误是因为event封装了事件的注册和调用，它变成Subject的“私有”成员。这就是面向对象设计的三大特征之一(封装)，我们应该尽可能多的封装外部不必要访问的内容和状态，以免外部意外改变和错误的调用。
+上面第三行代码编译时会发生错误。之所以错误是因为event封装了delegate的调用，委托的Invoke变成Subject的“私有”成员。这就是面向对象设计的三大特征之一(封装)，我们应该尽可能多的封装外部不必要访问的内容和状态，以免外部意外改变和错误的调用。
 同样委托这里却不会有任何限制，从而导致被其他对象任意的使用，最后遍布整个程序，难以定位问题。
 
-# 5.后记
+# 后记
 委托你可以把它当作C#提供给开发者的语法糖，当然如果你只停留在使用他的便捷，而不知道其所以然，那么傻瓜的方式会让你变得更傻瓜。相反你会站在巨人的肩膀上，将他人的思想变成自己的智慧。
 
