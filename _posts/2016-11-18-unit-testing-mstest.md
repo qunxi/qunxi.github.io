@@ -137,6 +137,7 @@ partial class BinarySearchTest
 比如之前写的`void FindAny_TargetValueInTheList_ReturnCorrectInde()`就测试函数正确行为的测试用例。当然我们编写的是模板类，我们还应该测试不同的数据类型，比如`float，double，char`，甚至是自定义类型。以下我们测试的是int类型，其他类型方法相同。我们可以用`[Category("Int Case")]`来给测试用例进行分组。
 
 测试场景1：查询对象不在数列中
+
 ```
 [TestMethod]
 [Category("Int Case")]
@@ -157,6 +158,7 @@ public void FindAny_TargetValueNotInTheList_ReturnMinusOne()
 ```
 
 测试场景2：在空数组中查找
+
 ```
 [TestMethod]
 [Category("Int Case")]
@@ -177,6 +179,7 @@ public void FindAny_EmptyList_ReturnMinusOne()
 ```
 
 测试场景3：数组为null的情况 
+
 ```
 [TestMethod]
 [Category("Int Case")]
@@ -233,6 +236,7 @@ public int FindAny(List<T> list, T value)
 
 为了测试的完整性，在我们完成实现后，我们需要根据具体的实现添加一些在一开始没有考虑到的测试用例。比如是否所有的路径都被覆盖到，之前的几个测试用例其实并没有完全覆盖所有的路径，甚至简单的行覆盖都没有做到。也许你已经发现在`FindAny_TargetValueNotInTheList_ReturnMinusOne()`
 和`FindAny_TargetValueInTheList_ReturnCorrectIndex()`中虽然我们得到了正确的结果，但是他永远不会进入`while`循环中的`else`判断条件，所以我们并不能知道是否可以正确的查找到数组靠右侧的数字。
+
 ```
 [TestMethod]
 [Category("Int Case")]
