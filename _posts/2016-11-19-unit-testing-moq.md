@@ -186,8 +186,8 @@ class TicketMachineMock: ITicketMachine
 
 ```
 这里我们定义了两个Test Double：`TicketRepositoryStub，TicketMachineMock`。也许你注意到这两个类的后缀一个是Stub，一个是Mock，就像在[基础篇](https://qunxi.github.io/2016/11/05/unit-testing-basic.html)
-里介绍的Stub模拟的是对象的状态（TicketRepositoryStub返回的是剩余车票的期望张数），而Mock是模拟的是一种行为（我们只关心购买车票成功后，是否调用了打印车票
-这个行为），两个Test Double对象实现后我们需要将它们和具体的依赖类（TicketRepository，TicketMachine）替换了。现在问题来了，在原来的设计基础上好像很难直接将依赖对象替换。
+里介绍的Stub模拟的是对象的状态(TicketRepositoryStub返回的是剩余车票的期望张数)，而Mock是模拟的是一种行为（我们只关心购买车票成功后，是否调用了打印车票
+这个行为），两个Test Double对象实现后我们需要将它们和具体的依赖类(TicketRepository，TicketMachine）替换了。现在问题来了，在原来的设计基础上好像很难直接将依赖对象替换。
 其实这个时候你也许发现了一个设计上的问题`TicketRepository`，`TicketMachine`和被测类`TicketCenter`有强耦合，`TicketCenter`类依赖了具体的实现，如果哪天
 我们换了打印车票的机器或者其他的票务数据库那我们也要同时修改`TicketCenter`的代码，这违背了依赖倒置(Dependency Inversion)原则。
 这里我们需要介绍一种设计模式-[依赖注入(Dependency Injection)](https://en.wikipedia.org/wiki/Dependency_injection)
@@ -342,3 +342,5 @@ public class TicketCenter
 # 后记
 
 Mock对象是面向对象多态的基本应用，如果在开始写代码时你就考虑了依赖对象的Mock，那么你已经给自己定义了两种使用场景：一个是测试环境，一个是项目环境，这样有助于你在设计代码时理清依赖，因为测试环境有很多依赖是不存在的，所以它可以明显的提醒你对依赖进行解耦。好的设计是可以适应不同环境，做到开发封闭原则(Open Close Principle:对修改封闭，对扩展开发)，单元测试也在设计的角度保证了代码质量。
+
+## （转载本站文章请注明[作者和出处](https://qunxi.github.io/)，请勿用于任何商业用途）
