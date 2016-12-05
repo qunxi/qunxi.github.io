@@ -95,7 +95,7 @@ refs/
 
 之前在介绍objects目录时我们提到了提交对象(Commit Object)，每个提交都会生成一个提交对象。下面我们看看提交对象的结构：
 
-![提交对象](/post-images/commit_object1.png)
+![提交对象](/post-images/commit_object.png)
 
 上面总共有三种类型的对象：Commit Object，Tree Object和Blob Object。
 
