@@ -19,7 +19,7 @@ tags:
 是测试更专注于被测代码的逻辑。
 <!--more-->
 
-# 0x0001-测试场景
+# 1. 测试场景
 
 在开始介绍如何使用Moq进行Mock做Test Double之前，我们需要假设一个场景，方便理解上达成一致。我们都有过买火车票的经历，我们一般会在售票中心购买火车票，售票中心会根据你的需要（目的地，票的类型，票
 的张数）售出火车票。这里我们在`TicketCenter`类中提供了一个`BuyTickets`函数负责购买火车票，而这个函数就是我们今天要测的代码。我们知道在买火车票时，`TicketCenter`应该去远程数据库(`TicketRepository`)
@@ -158,7 +158,7 @@ class TicketCenterTest
 的概念了。但是即使这样，这些Dummy Object还是太重量级，我们是做单元测试，不是集成测试(Integration Test)，我们要求单元测试应该是尽可能
 快的运行，因为运行的频率很高，我们每提交一次代码就要跑一次。
 
-# 0x0010-Stub/Mock与依赖注入（Dependency injection）
+# 2. Stub/Mock与依赖注入（Dependency injection）
 
 上面提到了Dummy Object太重量级了，那么是不是可以用些简单的方法解决这个问题呢？这里我们可以用Stub/Mock对象来替代之前提到的Dummy Object。
 
@@ -273,7 +273,7 @@ public class TicketCenter
 帮助我们实现将这些繁琐没有技术含量的事，下面我们就介绍一个C#的Mock框架(Moq)。
 
 
-# 0x0011-Mock测试框架（Moq）
+# 3. Mock测试框架（Moq）
 
 在介绍Moq之前我先声明一点，这里的Mock框架已经不是单一的Mock，它还包含了Stub。还有为什么要以Moq为例，主要是它结合了函数式编程风格和Linq的特点，让代码看上去非常
 简洁。其实Moq官网有很好的[GuidLine](https://github.com/Moq/moq4/wiki/Quickstart)，这里我只是结合自己的例子做一个简单的介绍。
