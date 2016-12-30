@@ -16,6 +16,7 @@ tags:
 [上篇文章](https://qunxi.github.io/2016/12/18/g11n-unicode.html)介绍了软件全球化的基础-Unicode，Unicode的重大意义和秦始皇统一文字的意义一样伟大，在这个基础上我们再来谈谈作为程序员应该如何做好软件全球化。
 
 <!--more-->
+
 # 1. 软件的全球化
 
 在写上一篇文章时，我就在纠结是否应该叫软件国际化，但是最终我还是决定叫软件全球化，因为在英文中软件的国际化和全球化是两个完全不一样的概念。下面我们来看看这几个概念
@@ -71,11 +72,13 @@ Windows平台为软件全球化提供能很多简洁便利的解决方案，尤�
 
 其中InvariantCulture是NeutralCulture的父文化，NeutralCulture是SpecificCulture的父文化。通过这个层级关系，.Net可以在没找到特定文化时自动匹配兼容的父文化。
 
-文化相关的类型都定义在System.Globalization命名空间下，比如日期，数字，文本等元素。其中`CultureInfo`是个非常重要的类，.Net下的每个线程分别附带两个CultureInfo相关的属性，一个是`CurrentUICulture`另一个是`CurrentCulture`。前者是在运行时获取特定文化的资源数据，后者用于决定日期、数字、货币的转换格式以及和文化相关的文本比较，排序等行为。具体`CultureInfo`介绍请参看[MSDN](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx)
+文化相关的类型都定义在System.Globalization命名空间下，比如日期，数字，文本等元素。其中`CultureInfo`是个非常重要的类，.Net下的每个线程分别附带两个CultureInfo相关的属性，一个是`CurrentUICulture`另一个是`CurrentCulture`。前者是在运行时获取特定文化的资源数据，后者用于决定日期、数字、货币的转换格式以及和文化相关的文本比较，排序等行为。
+具体`CultureInfo`介绍请参看[MSDN](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx)
 
 ## 2. Resources文件
 
-很多时候程序员会自作聪明的为了省事，将和用户接口(UI)相关的字符用常量来保存在代码中或者在程序运行时自动生产，看似聪明的做法却给之后的本地化埋下隐患，作为一个翻译人员要找到分散在代码中需要翻译的字符，甚至一些运行时才能生产的字符更是困难。.Net建议我们将资源相关的数据（图片，文字等）保存在.resx文件中，每个资源都有一个唯一的Name，而具体需要本地化的信息则保存在Value里。为了方便翻译人员我们还可以添加Comments，来帮组翻译人员理解文本的上下文。.Net可以通过的`ResourceManager`类来加载相应的资源。下面是具体加载的代码
+很多时候程序员会自作聪明的为了省事，将和用户接口(UI)相关的字符用常量来保存在代码中或者在程序运行时自动生产，看似聪明的做法却给之后的本地化埋下隐患，作为一个翻译人员要找到分散在代码中需要翻译的字符，甚至一些运行时才能生产的字符更是困难。.Net建议我们将资源相关的数据（图片，文字等）保存在.resx文件中，每个资源都有一个唯一的Name，而具体需要本地化的信息则保存在Value里。为了方便翻译人员我们还可以添加Comments，来帮组翻译人员理解文本的上下文。.Net可以通过的`ResourceManager`类来加载相应的资源。
+下面是具体加载的代码
 
 ```
 ResourceManager resMgr = new ResourceManager("ProjectName.Properties.Resources", typeof(Resources).Assembly);
@@ -134,7 +137,8 @@ public static string convertUTF16toUTF8(unicodeString)
 
 13. 保存数据，应该以文化中立的格式保存，以免不同文化的版本处理数据出现歧义。
 
-# 后记
+# 后记
+
 
 作为程序员我们应该培养自己在工程上的思想和意识。就像软件全球化的考虑，从长远出发是利大于弊的。
 
