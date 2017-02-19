@@ -3,7 +3,7 @@ author: qunxi
 create: 2017-01-17 18:43+08:00
 update: 2017-01-31 18:43+08:00
 layout: page
-title: "面向对象设计"
+title: "代码的设计"
 description: ""
 comments : true
 categories:
