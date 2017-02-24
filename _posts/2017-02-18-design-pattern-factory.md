@@ -101,7 +101,6 @@ class ExamWorkshop{
          return Verify(car);   
    }
 }
-
 ```
 ![static factory method](/post-images/2017_2_18_static_factory_method.png)
 
@@ -152,7 +151,6 @@ class ExamWorkshop{
          return Verify(car);   
    }
 }
-
 ```
 ![factory method](/post-images/2017_2_18_factory_method.png)
 
@@ -164,8 +162,7 @@ class ConceretCarFactory<T> : CarFactory where T: Car, new(){
         Car car = new T();
         return AssmableCar(car);
     }
-} 
-
+}
 ```
 现在我们只管添加或删除汽车品牌，而不需要提供相对应的工厂类。**工厂方法**和**简单工厂**相比，它的可扩展性更高
 
@@ -248,7 +245,7 @@ class BenzFactory : IFactory{
 
 工厂模式也有其自身的问题，比如引入了抽象工厂的依赖，虽然这不是太大的问题，但是从`ExamWorkshop`的角度来说它应该只关心`Car`，而不应该知道`Factory`。如何解决这些问题，这里我们暂时打个问号，如果你很感兴趣可以去了解下**依赖注入**和**IoC容器**，这些我将在以后的文章中继续讨论。最后我想说的就是模式是在实践中产生的，它并不是固定不变的，它是经验的总结，另外模式是对某些场景的总结，它的选择需要很多的权衡，我们不能为了模式而模式。
 
-
+## （转载本站文章请注明[作者和出处](https://qunxi.github.io/)，请勿用于任何商业用途）
 
 
 
