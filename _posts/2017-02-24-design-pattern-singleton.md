@@ -38,7 +38,6 @@ class LoggerFactory{
     }
 }
 ```
-![singleton pattern](/post-images/2017_2_24_singleton.png)
 我们通过工厂`LoggerFactory`的`Create`方法来创建Logger对象，而且每次调用`Create`方法时判断Logger对象是否已被创建，这样确保了通过`LoggerFactory`只会生产一个Logger对象。但是严格意义上讲这并不能完全禁止只实例化一个对象，因为我们可以在任何的地方直接通过`new`来实例化`Logger`对象。那如何限制全局的唯一性呢，我们来看看Singleton模式的定义。
 
 # 2. Singleton模式（单例模式）
@@ -63,6 +62,7 @@ class Logger{
     }
 }
 ```
+![singleton pattern](/post-images/2017_2_24_singleton.png)
 上面的代码利用静态成员方法调用私有构造函数和判空来保证实例全局的唯一性。当然我们要保证任何情况都是唯一的，就必须考虑多线程的情况，所以这里我们要保证`Instance`这个静态函数是线程安全的。下面我们对上边的代码做进一步重构：
 
 # 3. 多线程下的唯一保证
