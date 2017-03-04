@@ -1,7 +1,7 @@
 ---
 author: qunxi
 create: 2017-02-17 18:43+08:00
-update: 2017-02-17 18:43+08:00
+update: 2017-02-18 18:43+08:00
 layout: page
 title: "设计模式-Factory模式"
 description: ""
@@ -23,7 +23,8 @@ tags:
 ```
 interface Car{
     void SetupEngine(Engine engine);
-    void SetupWheels(Wheel w1, Wheel w2, Wheel w3, Wheel w4);
+    void SetupWheels(Wheel w1, Wheel w2, 
+                     Wheel w3, Wheel w4);
     void Run(); 
     ...
 }
@@ -44,7 +45,8 @@ class ExamWorkshop{
          Wheel wheel2 = new Wheel();
          Wheel wheel3 = new Wheel();
          Wheel wheel4 = new Wheel();
-         car.SetupWheels(wheel1, wheel2, wheel3, wheel4);
+         car.SetupWheels(wheel1, wheel2, 
+                         wheel3, wheel4);
          car.Run();
          return Verify(car); 
     }
@@ -205,7 +207,10 @@ class HondaFactory : IFactory{
      public Car Create(){
          Car car = new Honda();
          car.SetupEngine(CreateEngine());
-         car.SetupWheels(CreateWheel(), CreateWheel(), CreateWheel(), CreateWheel());
+         car.SetupWheels(CreateWheel(), 
+                         CreateWheel(), 
+                         CreateWheel(), 
+                         CreateWheel());
          return car;
      }
 
@@ -222,7 +227,10 @@ class BenzFactory : IFactory{
      public Car Create(){
          Car car = new Benz();
          car.SetupEngine(CreateEngine());
-         car.SetupWheels(CreateWheel(), CreateWheel(), CreateWheel(), CreateWheel());
+         car.SetupWheels(CreateWheel(), 
+                         CreateWheel(), 
+                         CreateWheel(), 
+                         CreateWheel());
          return car;
      }
      
