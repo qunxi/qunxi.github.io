@@ -13,7 +13,7 @@ tags:
 ---
 # 前言
 
-前面两篇文章分别介绍了[Factory模式](https://qunxi.github.io/2017/01/30/object-oriented-design.html)和[Singleton模式](https://qunxi.github.io/2017/02/24/design-pattern-singleton.html)，今天我们再介绍另一种比较常用的构建型模式-Builder模式，很多开发人员很容易将它和[Factory模式](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)混淆,尤其是抽象工厂，但是无论从使用场景或实现细节还是有明显区别的，今天我们就聊聊Builder模式，在阅读本文前，我建议您先阅读[Factory模式](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)。
+前面两篇文章分别介绍了[Factory模式](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)和[Singleton模式](https://qunxi.github.io/2017/02/24/design-pattern-singleton.html)，今天我们再介绍另一种比较常用的构建型模式-Builder模式，很多开发人员很容易将它和[Factory模式](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)混淆,尤其是抽象工厂，但是无论从使用场景或实现细节还是有明显区别的，今天我们就聊聊Builder模式，在阅读本文前，我建议您先阅读[Factory模式](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)。
 <!--more-->
 
 # 1. Factory模式的重构
