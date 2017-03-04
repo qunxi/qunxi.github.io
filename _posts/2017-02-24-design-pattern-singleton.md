@@ -18,7 +18,7 @@ tags:
 
 # 1. 创建唯一的实例
 
-和[**工厂模式**]("https://qunxi.github.io/2017/02/18/design-pattern-factory.html")一样我希望通过一个具体的场景开始讨论，然后开始一步步的重构，这样可以让我们对模式的意图和作用更加容易理解。下面我们就以日志（Logger）为例开始讲解，日志（Logger）是开发人员非常熟悉的功能，通过日志我们可以记录软件运行时可能发生的问题或重要事件，当然在一个系统中，像日志这样经常使用`Cross-cutting`对象，往往只需要一个实例，而且我们会在软件的不同层次访问它。如果用[**工厂模式**](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)实现上述场景，我们也许会这样做：
+和[**工厂模式**](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)一样我希望通过一个具体的场景开始讨论，然后开始一步步的重构，这样可以让我们对模式的意图和作用更加容易理解。下面我们就以日志（Logger）为例开始讲解，日志（Logger）是开发人员非常熟悉的功能，通过日志我们可以记录软件运行时可能发生的问题或重要事件，当然在一个系统中，像日志这样经常使用`Cross-cutting`对象，往往只需要一个实例，而且我们会在软件的不同层次访问它。如果用[**工厂模式**](https://qunxi.github.io/2017/02/18/design-pattern-factory.html)实现上述场景，我们也许会这样做：
 
 ```
 class Logger{
