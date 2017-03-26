@@ -142,7 +142,7 @@ class AssmablyLine{
 class ExamWorkshop{
    public bool Test(){
        AssmablyLine assmablyLine = new AssmablyLine();
-       Builder builder = new BenzBuilder();
+       BenzBuilder builder = new BenzBuilder();
        assmablyLine.Assmable(builder)
        Car car = builder.GetCar();
 
@@ -153,6 +153,7 @@ class ExamWorkshop{
 
 ```
 ![builder pattern](\post-images\2017_3_3_builder_pattern.png)
+
 上面的代码我们做了一下几点调整：
 
 1. **提取构建过程**：我们将组装过程抽象成装配流水线(`AssmablyLine`)，这样不同产品只要组装过程是一致的就可以复用这段代码，我们不再需要像工厂类一样重复实现一样的构建代码。这里的`AssmablyLine`就是Builder模式中的`Director`对象。
