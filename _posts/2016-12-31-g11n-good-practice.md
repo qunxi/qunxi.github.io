@@ -143,4 +143,3 @@ public static string convertUTF16toUTF8(unicodeString)
 
 作为程序员我们应该培养自己在工程上的思想和意识。就像软件全球化的考虑，从长远出发是利大于弊的。
 
-## （转载本站文章请注明[作者和出处](https://qunxi.github.io/)，请勿用于任何商业用途）

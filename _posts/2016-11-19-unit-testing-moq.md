@@ -321,4 +321,3 @@ public void BuyTickets_BuyTicketsCountLargeThanRemains_ReturnFalse(){
 
 Mock对象是面向对象多态的基本应用，如果在开始写代码时你就考虑了单元测试依赖对象的Mock，那么你已经给自己定义了两种使用场景：一个是测试环境，一个是项目环境，这样有助于你在设计代码时理清依赖，因为测试环境依赖更加简洁，所以它可以明显的提醒我们对依赖进行解耦。好的设计是可以适应不同环境，做到开发封闭原则(Open Close Principle:对修改封闭，对扩展开发)，单元测试也在设计的角度保证了代码质量。
 
-## （转载本站文章请注明[作者和出处](https://qunxi.github.io/)，请勿用于任何商业用途）
