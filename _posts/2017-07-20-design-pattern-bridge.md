@@ -1,7 +1,7 @@
 ---
 author: qunxi
-create: 2016-11-27 18:43+08:00
-update: 2016-11-27 18:43+08:00
+create: 2017-07-20 18:43+08:00
+update: 2017-07-20 18:43+08:00
 layout: page
 title: "设计模式-Bridge模式"
 description: ""

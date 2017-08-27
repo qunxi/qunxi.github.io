@@ -129,25 +129,27 @@ delegate int Add(int a, int b);
 //Part1 匿名函数定义
 Add Sum;
 {
-	int sum = 10;
-	Sum = delegate(int a, int b){
-		return sum + a + b;
-	}
+    int sum = 10;
+    Sum = delegate(int a, int b){
+        return sum + a + b;
+    }
 }
+
 Sum(1, 2);
 
 //Part2 具名函数委托
 class Test{
-	private int _sum = 0;
+    private int _sum = 0;
 
-	public Test(int sum){
-		_sum = sum;
-	}
+    public Test(int sum){
+        _sum = sum;
+    }
 
-	public int Add(int a, int b){
-		return a + b;
-	}
+    public int Add(int a, int b){
+        return a + b;
+    }
 }
+
 int sum = 10;
 Test test = new Test(sum);
 Add Sum = test.Add;
@@ -213,7 +215,7 @@ Observer1 obj1 = new Observer1(sub);
 Observer2 obj2 = new Observer2(sub);
 sub.TestEvent(sub, null);
 ```
-上面第三行代码编译时会发生错误。之所以错误是因为event封装了delegate的调用，委托的Invoke变成Subject的“私有”成员。这就是面向对象设计的三大特征之一(封装)，我们应该尽可能的封装对象的内部状态和访问权限来避免外部用户的疏忽和错误的调用。而委托并没有这个限制，这会导致用户在Subject对象之外任意的调用，从而难以定位问题。
+上面第四行代码编译时会发生错误。之所以错误是因为event封装了delegate的调用，委托的Invoke变成Subject的“私有”成员。这就是面向对象设计的三大特征之一(封装)，我们应该尽可能的封装对象的内部状态和访问权限来避免外部用户的疏忽和错误的调用。而委托并没有这个限制，这会导致用户在Subject对象之外任意的调用，从而难以定位问题。
 
 # 后记
 
