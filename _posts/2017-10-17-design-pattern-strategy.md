@@ -128,7 +128,7 @@ class Product<TStrategy>
 
 > 定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
 
-![strategy pattern](/post-images/2017_10_20_strategy_pattern.png)
+![strategy pattern](/post-images/2017_10_20_strategy_pattern.PNG)
 
 Strategy模式将**易变性(volatility)**的算法提取封装成独立于客户代码的对象，从而使客户代码的职责更加清晰单一，并且提高了算法的复用性。
 
