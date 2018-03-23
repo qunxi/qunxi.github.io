@@ -20,7 +20,7 @@ tags:
 
 在介绍[代码设计](https://qunxi.github.io/2017/01/30/object-oriented-design.html)时，我们有提到要**面向接口编程，而不应该面向实现**，因为细节容易引入更多变化和依赖。所以通常我们会抽象共性作为接口，然后利用继承方式实现细节。比如我们要实现一款支持pdf、txt、epub的阅读App，我们最先考虑的是抽象出三种文本格式的解析和渲染等共性接口，以及三种文本的具体实现。
 
-```
+```C#
 interface IReader{
     void Open(string path);
     void Close();
@@ -49,7 +49,7 @@ class TxtReader: IReader{
 
 首先从客户代码角度，我们希望对于所有格式的电子书都有统一操作电子书的抽象行为，比如打开、获取目录、获取章节内容等，所以这里的抽象部分我们可以定义如下：
 
-```
+```C#
 
 interface IReader{
     void Open(string path);
@@ -84,9 +84,10 @@ class Reader : IReader{
     }
 }
 ```
+
 `IReader`是客户代码制定的抽象部分，作为客户代码它只需要知道`IReader`，至于`IReader`背后的实现对于客户代码完全不需要了解。同时作为底层电子书解析库`IReaderImph`，它也完全不需要依赖客户代码定义的`IReader`接口。下面我们再来看看实现部分的代码：
 
-```
+```C#
 interface IReaderImpl{
     void Open(string path);
     void Close();

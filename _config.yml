@@ -1,7 +1,8 @@
 
 title: 程序猿
-url: 'http://www.wangqunxi.com'
+url: 'http://qunxi.github.com'
 baseurl: '' #change it according to your repository name
+#port: 4001
 
 C#:
   type: programming
