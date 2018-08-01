@@ -82,12 +82,13 @@ class Logger{
             if(instance == null){
                 lock(syncLock){
                     if(instance == null){
-                        instance = new Logger();
+                        var temp = new Logger();
+                        Interlocked.Exchange(ref instance, temp); //避免编译器优化带来的现场不安全
                         return instance;
                     }
                 }
             }
-            return instance; 
+            return instance;
     }
 }
 ```
