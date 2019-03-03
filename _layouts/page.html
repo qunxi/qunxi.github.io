@@ -13,5 +13,12 @@ layout: master
     <h1 class="section-title">{{ page.title }}</h1>
     <div>{{ page.content }}</div>
     <h4 class="text-center" style="color: green">（转载本站文章请注明<a href="https://qunxi.github.io/">作者和出处</a>，请勿用于任何商业用途）</h4>
-    
+    <div>
+        {% if page.previous.url %}
+            <div><span>上一篇：</span><a href="{{page.previous.url}}">{{page.previous.title}}</a></div>
+        {% endif %}
+        {% if page.next.url %}
+            <div><span>下一篇：</span><a href="{{page.next.url}}">{{page.next.title}}</a></div>
+        {% endif %}
+    </div>
 </div>
