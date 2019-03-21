@@ -94,7 +94,7 @@ class Logger{
 ```
 上面我们使用同步锁的方法解决了多线程创建单例的问题，当然我们还可以利用C#自有特性，在不需要同步锁的情况下完成同样的效果，因为.Net保证了静态成员初始化是线程安全的。这种方式不是所有语言通用的，所以我同时将静态函数改成了静态属性，目的仅仅想告诉你这种方式只适合C#。
 
-```
+```C#
 class Logger{
     private static readonly Logger instance = new Logger()
 
@@ -105,6 +105,20 @@ class Logger{
             return instance;
         }
     }
+}
+```
+
+C++可以通过函数内的静态变量实现类似的功能
+
+```C++
+class Logger{
+    public:
+        static Logger& instance(){
+            static logger;
+            return logger;
+        }
+    private:
+        Logger(){}
 }
 ```
 
